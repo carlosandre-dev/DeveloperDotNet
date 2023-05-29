@@ -51,3 +51,20 @@ static void Multiplication()
   Console.WriteLine($"O resultado da multiplicação de {valueOne} x {valueTwo} é: {multiplication}");
   Console.ReadKey();
 }
+
+static void Division()
+{
+  Console.Clear();
+  Console.WriteLine("Informe o primeiro valor:");
+  float valueOne = float.Parse(Console.ReadLine());
+
+  Console.WriteLine("Informe o segundo valor:");
+  float valueTwo = float.Parse(Console.ReadLine());
+
+  Console.WriteLine();
+
+  float division = valueOne / valueTwo;
+
+  Console.WriteLine($"O resultado da divisão de {valueOne} por {valueTwo} é: {division}");
+  Console.ReadKey();
+}
