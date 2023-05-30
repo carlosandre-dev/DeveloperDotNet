@@ -43,14 +43,14 @@ static void PreStart(int time)
 
 static void Start(int time)
 {
-  int currenTime = 0;
+  int currenTime = time;
 
-  while (currenTime != time)
+  while (currenTime != 0)
   {
     Console.Clear();
-    currenTime++;
     Console.WriteLine(currenTime);
     Thread.Sleep(1000);
+	currenTime--;
   }
 
   Console.Clear();
