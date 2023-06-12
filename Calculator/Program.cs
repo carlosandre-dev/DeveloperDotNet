@@ -10,7 +10,8 @@ static void Menu()
   Console.WriteLine("2 -> Subtrair");
   Console.WriteLine("3 -> Multiplicar");
   Console.WriteLine("4 -> Dividir");
-  Console.WriteLine("5 -> Sair");
+  Console.WriteLine("5 -> Raiz quadrada");
+  Console.WriteLine("6 -> Sair");
   Console.WriteLine("--------------------------------");
   Console.WriteLine("Qual operação deseja realizar?");
   short result = short.Parse(Console.ReadLine());
@@ -21,7 +22,8 @@ static void Menu()
     case 2: Subtraction(); break;
     case 3: Multiplication(); break;
     case 4: Division(); break;
-    case 5: Exit(); break;
+    case 5: SquareRoot(); break;
+    case 6: Exit(); break;
     default: Menu(); break;
   }
 }
@@ -107,10 +109,31 @@ static void Division()
 
 }
 
+static void SquareRoot()
+{
+  Console.Clear();
+  Console.WriteLine("Informe o valor:");
+  double value = double.Parse(Console.ReadLine());
+
+  Console.WriteLine();
+
+  double square = Math.Sqrt(value);
+
+  Console.WriteLine($"A raiz quadra de {value} é: {square}");
+  Console.ReadKey();
+  Menu();
+}
+
 static void Exit()
 {
   Console.Clear();
-  Console.WriteLine("--------------------------------");
-  Console.WriteLine("Obrigado por usar a Calculadora Digital");
-  System.Environment.Exit(0);
+  Console.WriteLine("Deseja mesmo sair da aplicação?");
+  char response = char.Parse(Console.ReadLine());
+
+  if ((response == 'S') || (response == 's')) {
+    Console.WriteLine("--------------------------------");
+    Console.WriteLine("Obrigado por usar a Calculadora Digital");
+    System.Environment.Exit(0);
+  }
+  Menu();
 }
