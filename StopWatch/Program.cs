@@ -50,7 +50,7 @@ static void Start(int time)
     Console.Clear();
     Console.WriteLine(currenTime);
     Thread.Sleep(1000);
-	currenTime--;
+	  currenTime--;
   }
 
   Console.Clear();
